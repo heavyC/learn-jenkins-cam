@@ -12,11 +12,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Jenkins on Udemy
+          jenkins
         </a>
       </header>
       <p>
-          Application version: 1
+        version: 0.0.2
       </p>
     </div>
   );
