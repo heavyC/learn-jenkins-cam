@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+        stage('Startup') {
             steps {
                 sh 'echo "Without docker"'
             }
@@ -27,6 +27,20 @@ pipeline {
                     ls -la
                 '''
 
+            }
+        }
+        stage('Test') {
+            steps {
+                sh '''
+                    echo "Testing"
+                    test -f build/index.html
+                    npm run test
+                '''
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploying" (not doing anything yet)'
             }
         }
     }
