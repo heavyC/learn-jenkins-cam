@@ -17,8 +17,16 @@ pipeline {
                 }
             }
             steps {
-                sh 'echo "With docker"'
-                sh 'npm --version'
+                sh '''
+                    echo "With docker"
+                    ls -la
+                    node --version
+                    npm --version
+                    npm ci 
+                    npm run build
+                    ls -la
+                '''
+
             }
         }
     }
