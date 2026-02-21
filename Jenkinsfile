@@ -10,7 +10,7 @@ pipeline {
 
         stage('w/ docker') {
             agent {
-                dockerContainer {
+                docker {
                     image 'node:18-alpine'
                     alwaysPull false
                 }
