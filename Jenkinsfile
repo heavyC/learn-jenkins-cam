@@ -9,11 +9,12 @@ pipeline {
         }
 
         stage('w/ docker') {
-            // agent {
-            //     dockerContainer {
-            //         image 'node:18-alpine'
-            //     }
-            // }
+            agent {
+                dockerContainer {
+                    image 'node:18-alpine'
+                    alwaysPull false
+                }
+            }
             steps {
                 sh 'echo "With docker"'
                 sh 'npm --version'
