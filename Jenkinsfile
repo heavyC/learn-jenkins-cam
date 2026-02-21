@@ -13,6 +13,7 @@ pipeline {
                 docker {
                     image 'node:18-alpine'
                     alwaysPull false
+                    reuseNode true  // ← ADD THIS - Critical!
                 }
             }
             steps {
